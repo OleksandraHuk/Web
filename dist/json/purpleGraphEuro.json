@@ -1,0 +1,18 @@
+{
+    "labels": ["753.24EU", "572.35EU", "1.75EU", "457.32EU", "51.35EU", "600.24EU"],
+    "datasets": [
+      {
+        "data": ["12", "20", "2", "110", "46", "160", "18"],
+        "pointBackgroundColor": "#ffffff",
+        "pointBorderWidth": 0,
+        "backgroundColor": "#554dc0",
+        "pointHoverBackgroundColor": "#554dc0",
+        "pointHoverRadius": 8,
+        "pointHoverBorderColor": " #e7e0f4",
+        "pointHoverBorderWidth": 3,
+        "tension": 0.4,
+        "fill": true
+      }
+    ]
+  }
+  

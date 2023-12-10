@@ -1,0 +1,18 @@
+{
+    "labels": ["753.24Usd", "572.35Usd", "1.75Usd", "457.32Usd", "51.35Usd", "600.24Usd"],
+    "datasets": [
+      {
+        "data": ["12", "120", "2", "110", "42", "3", "31"],
+        "pointBackgroundColor": "#ffffff",
+        "pointBorderWidth": 0,
+        "backgroundColor": "#554dc0",
+        "pointHoverBackgroundColor": "#554dc0",
+        "pointHoverRadius": 8,
+        "pointHoverBorderColor": " #e7e0f4",
+        "pointHoverBorderWidth": 3,
+        "tension": 0.4,
+        "fill": true
+      }
+    ]
+  }
+  

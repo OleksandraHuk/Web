@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1b0701b630.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4/dist/echarts.min.js"></script>
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
+    <script src="./js/scripts.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="img/logo.png" width="100px" height="100px" alt="" class="logo">
+            <div class="search">
+                <a href="" class="searchlink"> <i class="fa-solid fa-magnifying-glass" style="color:#445368"></i></a>
+                <form>
+                    <input height="20px" type="text" name="text" class="search_text"
+                        placeholder="Search payment, transfer, transaction..."></input>
+                </form>
+            </div>
+            <div class="links">
+                <a href="" class="navlink">Dashboard</a>
+                <a href="" class="navlink">Transfers</a>
+                <a href="" class="navlink">Payments</a>
+                <a href="" class="navlink">Recent Transactions</a>
+                <a href="" class="navlink">Loan</a>
+                <a href="" class="navlink">Online Support</a>
+            </div>
+            <div class="account">
+                <div class="circle"></div>
+
+                <p class="acc_text">Ertugrul Cevahir</p>
+                <a href="" class="acc_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </a>
+            </div>
+
+        </header>
+        <div class="cols">
+            <div class="col">
+                <div class="balance">
+                    <div class="top">
+                        <h5 class="top_title">Balance</h5>
+                        <a>
+                            <p id="tl_btn" class="currency">TL</p>
+                        </a>
+                        <a>
+                            <p id="euro_btn" class="currency">EURO </p>
+                        </a>
+                        <a>
+                            <p id="usd_btn" class="currency">USD</p>
+                        </a>
+                    </div>
+                    <p class="course">52.850,00 TL</p>
+
+                    <head>
+                        <div class="purple_graph"><canvas id="purpleGraph"></canvas></div>
+                        <!-- <img src="img/graph.png"width="676px" height="286px"alt="" class="graph"> -->
+                        <meta charset="UTF-8">
+                        <style>
+                            canvas {
+                                border: 1px color(srgb #5631b6 #6294f8);
+                            }
+                        </style>
+                    </head>
+                    <div class="lines">
+                        <p class="currency_tl">TL</p>
+                        <hr class="line_tl">
+                        <p class="currency_euro">EURO</p>
+                        <hr class="line_euro">
+                        <p class="currency_usd">USD</p>
+                        <hr class="line_usd">
+                    </div>
+                    <div class="percents">
+                        <span class="line_percent">50%</span>
+                        <span class="line_percent">30%</span>
+                        <span class="line_percent">20%</span>
+                    </div>
+                </div>
+                <div class="calculater">
+                    <div class="calc_top">
+                        <h5 class="top_title">Loan Calculater</h5>
+                        <a href="" class="loan">
+                            <p>Consumer Loan</p>
+                        </a>
+                        <a href="" class="loan">
+                            <p>Auto Loan</p>
+                        </a>
+                        <a href="" class="loan">
+                            <p>Mortgage</p>
+                        </a>
+                    </div>
+                    <div class="calc_blocks">
+                        <div class="inputs">
+                            <div class="calc_one">
+                                <form>
+                                    <input type="text" class="calc_text" placeholder="Loan Amount">
+                                </form>
+                                <span class="calc_number">120.000,00 TL</span>
+                            </div>
+                            <input type="range" value="50" class="calc_range" name="range" id="">
+                            <div class="calc_one">
+                                <form>
+                                    <input type="text" class="calc_text" placeholder="Term">
+                                </form>
+                                <span class="calc_num">96</span>
+                                <span class="calc_mount">Mount(s)</span>
+                                <a href="" class="acclink"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="#0971ca" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                    </svg></a>
+                            </div>
+                            <input type="range" value="75" class="calc_range" name="range" id="">
+                            <div class="calc_one">
+                                <form>
+                                    <input type="text" class="calc_text" placeholder="Installment Amount">
+                                </form>
+                                <span class="calc_numb">TL</span>
+                            </div>
+                            <input type="range" value="0" class="calc_range" name="range" id="">
+                        </div>
+                        <div class="windows">
+                            <div class="calc_window">
+                                <p class="windows_text">Per-Annum Rate</p>
+                                <p class="window_numb">1,55%</p>
+                            </div>
+                            <div class="calc_window">
+                                <p class="windows_text">Total Cost</p>
+                                <p class="window_numb">608,00 TL</p>
+                            </div>
+                            <div class="calc_window">
+                                <p class="windows_text">Payback</p>
+                                <p class="window_numb">105.000,00 TL</p>
+                            </div>
+                            <div class="window_confirm">
+                                <p class="conf_text">Payment Plan</p>
+                                <button type="button" class="conf_button">Resort</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="credit">
+                    <div class="credit_top">
+                        <h5 class="top_title">Credit Cards</h5>
+                    </div>
+                    <div class="cards">
+                        <div class="card_one"></div>
+                        <div class="card_two">
+                            <img src="img/card.png" alt="" class="card">
+                            
+                        </div>
+                        <div class="card_three"></div>
+                    </div>
+                    <div class="card_content">
+                        <a href="" class="card_href"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="#ffff" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                            </svg></a>
+                        <p class="card_title">Maxium Card</p>
+                        <a href="" class="card_href"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="#ffff" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                            </svg></a>
+
+                    </div>
+                    <div class="credit_text">
+                        <p class="credit_grey">
+                            Current debt
+                        </p>
+                        <p class="credit_white">
+                            1.400,00 TL
+                        </p>
+                    </div>
+                    <hr class="credit_line">
+                    <div class="credit_text">
+                        <p class="credit_grey">
+                            Credit Available
+                        </p>
+                        <p class="credit_white">
+                            8.500,00 TL
+                        </p>
+                    </div>
+                    <hr class="credit_line">
+                    <div class="credit_text">
+                        <p class="credit_grey">
+                            Cut off date
+                        </p>
+                        <p class="credit_blue">
+                            03.05.2017
+                        </p>
+                    </div>
+                    <div class="credit_btns">
+                        <button class="credit_btn">
+                            Pay the debt
+                        </button>
+                        <button class="credit_btn">
+                            Activity
+                        </button>
+                    </div>
+                </div>
+                <div class="send_one">
+                    <div class="circle_one"></div>
+                    <h5 class="send_name">Alper Tornacı</h5>
+                    <p class="send_text">00.00 TL</p>
+                    <button class="send_btn">Send</button>
+                </div>
+                <div class="send">
+                    <div class="circle_two"></div>
+                    <h5 class="send_nametwo">Tuğrul Küçükmustafa</h5>
+                    <p class="send_texttwo">00.00 TL</p>
+                    <button class="send_btntwo">Send</button>
+                </div>
+                <div class="send">
+                    <div class="circle_one"></div>
+                    <h5 class="send_name">Salim Tornacı</h5>
+                    <p class="send_text">00.00 TL</p>
+                    <button class="send_btn">Send</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="payments">
+                    <p class="pay_title">
+                        Recurring Payments
+                    </p>
+                    <div class="pay_date">
+                        <div class="pay_circle">
+                            <p class="circle_text">08 <br>
+                                May</p>
+                        </div>
+                        <div class="pay_text">
+                            <h5 class="pay_subtitle">
+                                Utility Bill
+                            </h5>
+                            <p class="pay_info">
+                                Lorem ipsum dolor sit <br>
+                                amet, consectetur adipisi <br>
+                                cing elit, sed.
+                            </p>
+                            <p class="pay_numb">
+                                186,00 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pay_date">
+                        <div class="pay_circle">
+                            <p class="circle_text">22 <br>
+                                May</p>
+                        </div>
+                        <div class="pay_text">
+                            <h5 class="pay_subtitle">
+                                House Rent
+                            </h5>
+                            <p class="pay_info">
+                                Eiusmod tempor incididu <br>
+                                ut labore et dolore.
+                            </p>
+                            <p class="pay_numb">
+                                2.800,00 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pay_date">
+                        <div class="pay_circle">
+                            <p class="circle_text">01<br>
+                                Jun</p>
+                        </div>
+                        <div class="pay_text">
+                            <h5 class="pay_subtitle">
+                                Phone Bill
+                            </h5>
+                            <p class="pay_info">
+                                Ut enim ad minim venim, <br>
+                                quis nostrud exercitatio <br>
+                                ullamco labori
+                            </p>
+                            <p class="pay_numb">
+                                70,00 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pay_foot">
+                        <div class="pay_circles">
+                            <a href="" class="pay_mincircle"> <i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #3a4e63"></i>
+                            </a>
+                            <a href="" class="pay_mincircle"><i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #1c2937;"></i>
+                            </a>
+                            <a href="" class="pay_mincircle"><i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #1c2937;"></i>
+                            </a>
+                        </div>
+                        <button class="foot_btn">
+                            View All
+                        </button>
+                    </div>
+                </div>
+                <div class="transactions">
+                    <p class="trans_title">
+                        Recent Transactions
+                    </p>
+                    <div class="trans_date">
+                        <div class="trans_circle">
+                            <p class="circle_text">Today</p>
+                        </div>
+                        <div class="trans_text">
+                            <div class="trans_line">
+                                <h5 class="trans_subtitle">
+                                    Starbacks
+                                </h5>
+                                <a href="" class="trans_icon"><i class="fa-solid fa-caret-up fa-rotate-180"
+                                        style="color: #ff6161"></i></a>
+                            </div>
+                            <p class="trans_numb">
+                                12,00 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="trans_date">
+                        <div class="trans_circle">
+                            <p class="circle_text">30 <br> Apr</p>
+                        </div>
+                        <div class="trans_text">
+                            <div class="trans_line">
+                                <h5 class="trans_subtitle">
+                                    Salary
+                                </h5>
+                                <a href="" class="trans_i"><i class="fa-solid fa-caret-up"
+                                        style="color: #5f9952"></i></a>
+                            </div>
+                            <p class="trans_numb">
+                                12.000,00 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="trans_date">
+                        <div class="trans_circle">
+                            <p class="circle_text">29<br>
+                                Apr</p>
+                        </div>
+                        <div class="trans_text">
+                            <div class="trans_line">
+                                <h5 class="trans_subtitle">
+                                    CarrefourSA
+                                </h5>
+                                <a href="" class="trans_icn"><i class="fa-solid fa-caret-up fa-rotate-180"
+                                        style="color: #ff6161"></i></a>
+                            </div>
+                            <p class="trans_numb">
+                                324,78 TL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="trans_foot">
+                        <div class="trans_circles">
+                            <a href="" class="trans_mincircle"> <i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #3a4e63"></i>
+                            </a>
+                            <a href="" class="trans_mincircle"><i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #1c2937;"></i>
+                            </a>
+                            <a href="" class="trans_mincircle"><i class="fa-solid fa-circle fa-2xs"
+                                    style="color: #1c2937;"></i>
+                            </a>
+                        </div>
+                        <button class="trans_btn">
+                            View All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+
+            <meta name="viewport" content="width=device-width, initial-scale=0.1">
+            <style>
+                .slidestring {
+                    animation: marquee 10s linear infinite;
+                }
+
+                @keyframes marquee {
+                    100% {
+                        transform: translateX(100%);
+                    }
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+            </style>
+
+            </head>
+
+            <body>
+
+                <div class="slidestring">
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">BIST</p>
+                    <p class="footer_text">90.491</p>
+                    <img src="img/line1.png" alt="" class="footer_line">
+
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">VIOP</p>
+                    <p class="footer_text">111.113</p>
+                    <img src="img/line2.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-down fa-2xl"
+                            style="color: #ff6161"></i></a>
+                    <p class="footer_text">DOW JONES</p>
+                    <p class="footer_text">20.869</p>
+                    <img src="img/line3.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">XU 100</p>
+                    <p class="footer_text">20.869</p>
+                    <img src="img/line2.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">BIST BANKS</p>
+                    <p class="footer_text">152.421</p>
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">BIST</p>
+                    <p class="footer_text">90.491</p>
+                    <img src="img/line1.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">VIOP</p>
+                    <p class="footer_text">111.113</p>
+                    <img src="img/line2.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-down fa-2xl"
+                            style="color: #ff6161"></i></a>
+                    <p class="footer_text">DOW JONES</p>
+                    <p class="footer_text">20.869</p>
+                    <img src="img/line3.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">BIST</p>
+                    <p class="footer_text">90.491</p>
+                    <img src="img/line1.png" alt="" class="footer_line">
+
+                    <a href="" class="footer_icon"><i class="fa-solid fa-caret-up fa-2xl"
+                            style="color: #5f9952"></i></a>
+                    <p class="footer_text">VIOP</p>
+                    <p class="footer_text">111.113</p>
+                    <img src="img/line2.png" alt="" class="footer_line">
+                </div>
+        </footer>
+    </div>
+</body>
+
+</html>

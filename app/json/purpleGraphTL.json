@@ -1,0 +1,18 @@
+{
+    "labels": ["753.24TL", "572.35TL", "1.75TL", "457.32TL", "51.35TL", "600.24TL"],
+    "datasets": [
+      {
+        "data": ["12", "100", "2", "110", "160", "160", "160"],
+        "pointBackgroundColor": "#ffffff",
+        "pointBorderWidth": 0,
+        "backgroundColor": "#554dc0",
+        "pointHoverBackgroundColor": "#554dc0",
+        "pointHoverRadius": 8,
+        "pointHoverBorderColor": " #e7e0f4",
+        "pointHoverBorderWidth": 3,
+        "tension": 0.4,
+        "fill": true
+      }
+    ]
+  }
+  
